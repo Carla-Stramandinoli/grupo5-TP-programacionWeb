@@ -1,0 +1,24 @@
+﻿/* URL Paleta de colores LIGHT: https://www.coloreasily.com/?colors=060405-fdfcfc-6a8a86-f4f1f1-8fa8a5 */
+/* URL Paleta de colores DARK: https://www.coloreasily.com/?colors=fcfcfd-1c1c21-c2c8cc-322e38-9ea8ae */
+@import url('https://fonts.googleapis.com/css2?family=Catamaran');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Infant');
+@import url('https://fonts.googleapis.com/css2?family=Rubik');
+
+:root {
+	--light-color-acento-1:  #6a8a86 ; /* COLOR PARA LOS BOTONES */
+	--light-color-acento-2:  #f4f1f1 ; 
+	--light-color-acento-3:  #8fa8a5 ;	
+	--dark-color-acento-1:  #c2c8cc ; /* COLOR PARA LOS BOTONES */
+	--dark-color-acento-2:  #322e38 ;
+	--dark-color-acento-3:  #9ea8ae ;
+}
+
+.light-theme {
+	color:  #060405  ;
+	background-color:  #fdfcfc  ;
+}
+
+.dark-theme {
+	color:  #fcfcfd  ;
+	background-color:  #1c1c21 ;
+}

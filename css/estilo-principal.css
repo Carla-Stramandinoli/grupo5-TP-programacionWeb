@@ -1,0 +1,33 @@
+﻿@font-face { /* Fuente para titulos y contenido de importancia dentro de la web */ 
+   font-family: 'catamaran';
+   src: url('https://fonts.googleapis.com/css2?family=Catamaran');
+}
+ 
+@font-face { /* Fuente para los textos */
+   font-family: 'cormorantInfant';
+   src: url('https://fonts.googleapis.com/css2?family=Cormorant+Infant');
+}
+ 
+@font-face { /* Fuente para los titulos principales */ 
+   font-family: 'rubik';
+   src: url('https://fonts.googleapis.com/css2?family=Rubik');
+}
+
+body {
+   margin: 0px;
+}
+
+h1 {
+   margin: 0px;
+}
+
+#categoria-seccion {
+   min-height: 720px;
+   background-color: #fdfcfc;
+   /*background-color: #1c1c21;*/
+}
+
+/* El estilo 'categoria-articulo' se genera junto con los datos. Representa cada item */
+.categoria-articulo {
+   border: 2px solid black;
+}
