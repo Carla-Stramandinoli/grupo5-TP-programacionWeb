@@ -1,4 +1,6 @@
-﻿@font-face { /* Fuente para titulos y contenido de importancia dentro de la web */ 
+﻿@import url("_core/css/temas_colores_fuentes.css");
+
+@font-face { /* Fuente para titulos y contenido de importancia dentro de la web */ 
    font-family: 'catamaran';
    src: url('https://fonts.googleapis.com/css2?family=Catamaran');
 }
@@ -21,13 +23,21 @@ h1 {
    margin: 0px;
 }
 
-#categoria-seccion {
+#seccion-categoria {
    min-height: 720px;
-   background-color: #fdfcfc;
-   /*background-color: #1c1c21;*/
+   background-color: var(--light-color-fondo);
+   /*background-color: var(--dark-color-fondo);*/
+
+   color: var(--light-color-texto);
+    /*color: var(--dark-color-texto);*/
+   font-family: 'cormorantInfant';
 }
 
-/* El estilo 'categoria-articulo' se genera junto con los datos. Representa cada item */
-.categoria-articulo {
-   border: 2px solid black;
+.articulo-categoria {
+   border: solid 3px gray;
+}
+
+#qr-code {
+   width:100px;
+   height:100px;
 }

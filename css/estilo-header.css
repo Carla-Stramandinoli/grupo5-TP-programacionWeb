@@ -1,6 +1,8 @@
 #encabezado-principal {
     background-color: var(--light-color-acento-3);
     /*background-color: var(--dark-color-acento-2);*/
-    color: black;
+
+    color: var(--light-color-texto);
+    /*color: var(--dark-color-texto);*/
     font-family: 'catamaran';
 }
