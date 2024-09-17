@@ -28,9 +28,23 @@ input{
    gap: 10px; /* Espacio entre los inputs */
 }
 
-.input-pass {
-   padding-left: 30px; /* Espacio para el ícono */
-   width: 200px;
-   height: 35px;
-}
 
+
+/* posicionamiento del icono */
+/* .input-pass input {
+   padding-left: 30px; /* Espacio para el ícono */
+   /* width: 200px;
+   height: 35px;} */
+
+/* .input-pass  {
+   position: relative;
+   display: inline-block;
+} */
+
+/* .input-pass img {
+   position: absolute;
+   left: 10px;
+   top: 50%;
+   pointer-events: none;
+   color: gray;
+} */
