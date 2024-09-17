@@ -7,6 +7,63 @@
     font-family: 'catamaran';
 }
 
+.primer-linea {
+    display: flex;
+    justify-content: space-between;
+    height: 150px;
+}
+
+.logo-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.imagen-logo {
+    height: 100px;
+}
+
+.buscador-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.buscador {
+    background-color: var(--light-color-acento-3);
+    /*background-color: var(--dark-color-acento-2);*/
+    color: var(--light-color-texto);
+    /*color: var(--dark-color-texto);*/
+    font-family: 'catamaran';
+    border: none;
+    border-bottom: solid 1px black;
+}
+
+.buscador:focus {
+    outline: none; 
+}
+
+.iconos-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 5px;
+}
+
+.carrusel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+}
+
+.imagen-prueba-carrusel {
+    height: 250px;
+}
+
 #footer-principal {
     background-color: var(--light-color-acento-3);
     /*background-color: var(--dark-color-acento-2);*/
