@@ -1,1 +1,36 @@
-﻿
+﻿.form-registro {
+   margin: 10% auto;
+   text-align: center;
+   border: 3px solid;
+   text-align: center;
+   width: 359px;
+}
+
+.boton-registrarse {
+   height: 50px;
+   background-color: #6a8a86;
+   border: 2px solid #fdfcfc;
+   border-radius: 6px;
+   color: white;
+   margin: 16px auto;
+   font-size: 16px;
+}
+
+input{
+   height: 20px;
+   width: 70%;
+}
+
+.inputs-form {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   gap: 10px; /* Espacio entre los inputs */
+}
+
+.input-pass {
+   padding-left: 30px; /* Espacio para el ícono */
+   width: 200px;
+   height: 35px;
+}
+
