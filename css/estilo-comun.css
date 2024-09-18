@@ -64,13 +64,13 @@
     background-color: var(--light-color-acento-3);
     /*background-color: var(--dark-color-acento-2);*/
     color: var(--light-color-texto);
-    /*color: var(--dark-color-texto);*/
+    /* color: var(--dark-color-texto); */
     font-family: 'rubik';
     display: flex;
     justify-content: flex-start;
 }
 
-.tab-categoria{
+.tab-categoria {
     text-decoration: none;
     color: var(--light-color-texto);
     /*color: var(--dark-color-texto);*/
