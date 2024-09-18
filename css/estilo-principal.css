@@ -31,10 +31,9 @@ body {
    font-family: 'cormorantInfant';
    width: 100%;
    display: flex;
-   flex-direction: row;
+   flex-wrap: wrap;
    align-content: center;
    justify-content: space-around;
-   flex-wrap: wrap;
 }
 
 /* Estilos del contenedor de cada libro */
@@ -57,66 +56,63 @@ body {
    display: flex;
    flex-direction: column;
    align-items: center;
+   text-align: center;
 }
 
 .item-valor-nombre {
-   font-family: "catamaran";
+   font-family: 'catamaran';
 }
 
 .item-valor-autor {
-   font-family: "rubik";
-}
-
-.item-valor-portada {
-   font-family: "rubik";
+   font-family: 'rubik';
 }
 
 .item-valor-descripcion {
-   font-family: "cormorantInfant";
+   font-family: 'cormorantInfant';
 }
 
 .item-valor-rating {
-   font-family: "cormorantInfant";
+   font-family: 'cormorantInfant';
 }
 
 .item-campo-personalizado_1 {
-   font-family: "cormorantInfant";
+   font-family: 'rubik';
 }
 
 .item-valor-personalizado_1 {
-   font-family: "cormorantInfant";
+   font-family: 'cormorantInfant';
 }
 
 .item-campo-personalizado_2 {
-   font-family: "rubik";
+   font-family: 'rubik';
 }
 
 .item-valor-personalizado_2 {
-   font-family: "cormorantInfant";
+   font-family: 'cormorantInfant';
 }
 
 .item-campo-personalizado_3 {
-   font-family: "rubik";
+   font-family: 'rubik';
 }
 
 .item-valor-personalizado_3 {
-   font-family: "cormorantInfant";
+   font-family: 'cormorantInfant';
 }
 
 .item-campo-personalizado_4 {
-   font-family: "rubik";
+   font-family: 'rubik';
 }
 
 .item-valor-personalizado_4 {
-   font-family: "cormorantInfant";
+   font-family: 'cormorantInfant';
 }
 
 .item-campo-personalizado_5 {
-   font-family: "rubik";
+   font-family: 'rubik';
 }
 
 .item-valor-personalizado_5 {
-   font-family: "cormorantInfant";
+   font-family: 'cormorantInfant';
 }
 
 /* Estilos de las imagenes de la web */
