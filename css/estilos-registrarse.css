@@ -26,7 +26,6 @@ input {
    flex-direction: column;
    align-items: center;
    gap: 10px;
-   /* Espacio entre los inputs */
 }
 
 
@@ -39,7 +38,7 @@ input {
 }
 
 .input-pass input {
-   padding-left: 3px; /* Espacio para el ícono */
+   padding-left: 3px;
    width: 98%;
    height: 20px;
 }
