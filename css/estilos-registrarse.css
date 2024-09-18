@@ -16,7 +16,7 @@
    font-size: 16px;
 }
 
-input{
+input {
    height: 20px;
    width: 70%;
 }
@@ -25,26 +25,32 @@ input{
    display: flex;
    flex-direction: column;
    align-items: center;
-   gap: 10px; /* Espacio entre los inputs */
+   gap: 10px;
+   /* Espacio entre los inputs */
 }
 
 
-
 /* posicionamiento del icono */
-/* .input-pass input {
-   padding-left: 30px; /* Espacio para el ícono */
-   /* width: 200px;
-   height: 35px;} */
 
-/* .input-pass  {
+.input-pass {
    position: relative;
-   display: inline-block;
-} */
+   width: 71%;
+   margin-right: 3px;
+}
 
-/* .input-pass img {
+.input-pass input {
+   padding-left: 3px; /* Espacio para el ícono */
+   width: 98%;
+   height: 20px;
+}
+
+
+.input-pass .img-pass {
    position: absolute;
-   left: 10px;
+   right: 10px;
    top: 50%;
+   transform: translateY(-50%);
+   width: 20px;
+   height: 20px;
    pointer-events: none;
-   color: gray;
-} */
+}
