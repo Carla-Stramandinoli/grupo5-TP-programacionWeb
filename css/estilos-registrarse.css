@@ -53,3 +53,7 @@ input {
    height: 20px;
    pointer-events: none;
 }
+
+a{
+   text-decoration: none;
+}
