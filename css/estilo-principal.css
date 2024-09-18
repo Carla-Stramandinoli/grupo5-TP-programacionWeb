@@ -19,24 +19,97 @@ body {
    margin: 0px;
 }
 
-h1 {
-   margin: 0px;
-}
-
 #seccion-categoria {
    min-height: 720px;
    background-color: var(--light-color-fondo);
    /*background-color: var(--dark-color-fondo);*/
-
    color: var(--light-color-texto);
-    /*color: var(--dark-color-texto);*/
+   /*color: var(--dark-color-texto);*/
    font-family: 'cormorantInfant';
+   width: 100%;
+   display: flex;
+   flex-wrap: wrap;
+   align-content: center;
+   justify-content: space-around;
 }
 
 /* Estilos del contenedor de cada libro */ 
 
 .articulo-categoria {
-   border: solid 3px gray;
+   flex-basis: calc(19%);
+   border: solid 1px black;
+   margin-top: 5px;
+   margin-bottom: 5px;
+}
+
+.header-articulo {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   text-align: center;
+}
+
+.detalle-articulo {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   text-align: center;
+}
+
+.item-valor-nombre {
+   font-family: 'catamaran';
+}
+
+.item-valor-autor {
+   font-family: 'rubik';
+}
+
+.item-valor-descripcion {
+   font-family: 'cormorantInfant';
+}
+
+.item-valor-rating {
+   font-family: 'cormorantInfant';
+}
+
+.item-campo-personalizado_1 {
+   font-family: 'rubik';
+}
+
+.item-valor-personalizado_1 {
+   font-family: 'cormorantInfant';
+}
+
+.item-campo-personalizado_2 {
+   font-family: 'rubik';
+}
+
+.item-valor-personalizado_2 {
+   font-family: 'cormorantInfant';
+}
+
+.item-campo-personalizado_3 {
+   font-family: 'rubik';
+}
+
+.item-valor-personalizado_3 {
+   font-family: 'cormorantInfant';
+}
+
+.item-campo-personalizado_4 {
+   font-family: 'rubik';
+}
+
+.item-valor-personalizado_4 {
+   font-family: 'cormorantInfant';
+}
+
+.item-campo-personalizado_5 {
+   font-family: 'rubik';
+}
+
+.item-valor-personalizado_5 {
+   font-family: 'cormorantInfant';
 }
 
 /* Estilos de las imagenes de la web */ 
