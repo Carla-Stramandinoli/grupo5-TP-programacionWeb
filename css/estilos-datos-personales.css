@@ -1,11 +1,135 @@
-﻿<!DOCTYPE html>
-<html lang="en">
-<head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title></title>
-</head>
-<body>
-   
-</body>
-</html>
+﻿.boton-usuario {
+   height: 50px;
+   background-color: #6a8a86;
+   border: 2px solid #fdfcfc;
+   border-radius: 6px;
+   color: white;
+   margin: 16px auto;
+   font-size: 16px;
+}
+
+/* estilos de la primer linea de los contenedores */
+.contenedor-de-primer-linea {
+   height: 30px;
+   display: flex;
+   align-items: center;
+   justify-content: flex-start;
+   gap: 10px;
+}
+
+h5 {
+   margin: 0px;
+}
+
+.contenedor-de-email {
+   display: flex;
+   flex-direction: column;
+   align-items: flex-start;
+   gap: 5px;
+}
+
+.input-email {
+   height: 20px;
+   width: 90%;
+   margin-right: 10%; /*Chequear*/
+}
+
+.contenedor-de-contrasenia {
+   display: flex;
+   flex-direction: column;
+   align-items: flex-start;
+   gap: 5px;
+}
+
+.contenedor-de-boton-contrasenia {
+   width: 100%;
+   height: 30px;
+   display: flex;
+   justify-content: flex-start;
+   align-items: center;
+}
+
+.input-contrasenia {
+   width: 80%;
+   height: 20px;
+}
+
+#boton-cambiar {
+   width: 20%;
+   height: 30px;
+   background-color: #6a8a86;
+   border: 2px solid #fdfcfc;
+   border-radius: 6px;
+   color: white;
+   margin: 16px auto;
+   font-size: 16px;
+}
+
+.separacion-principal {
+   margin-top: 10px;
+   margin-bottom: 10px;
+}
+
+.contenedor-de-primeros-datos {
+   width: 100%;
+   display: flex;
+   gap: 10px;
+}
+
+.input-nombre-apellido {
+   width: 100%;
+   height: 20px;
+}
+
+.input-contenido {
+   flex-basis: calc(49%);
+}
+
+.contenedor-de-segundos-datos {
+   width: 100%;
+   display: flex;
+   gap: 10px;
+}
+
+select {
+   width: 100%;
+   height: 26px;
+}
+
+.input-date {
+   width: 100%;
+   height: 22px;
+}
+
+.input-prueba {
+   width: 100%;
+   height: 20px;
+}
+
+.prueba {
+   flex-basis: calc(33% - 6px);
+}
+
+.contenedor-de-terceros-datos {
+   width: 100%;
+   display: flex;
+   gap: 10px;  
+}
+
+.segundo-formulario {
+   display: flex;
+   flex-direction: column;
+   align-items: flex-start;
+   gap: 10px;
+}
+
+.boton-datos-personales {
+   width: 100%;
+   height: 50px;
+   background-color: #6a8a86;
+   border: 2px solid #fdfcfc;
+   border-radius: 6px;
+   color: white;
+   margin: 16px auto;
+   font-size: 16px;
+}

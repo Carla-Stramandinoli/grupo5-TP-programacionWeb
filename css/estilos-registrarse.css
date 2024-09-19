@@ -2,7 +2,6 @@
    margin: 10% auto;
    text-align: center;
    border: 3px solid;
-   text-align: center;
    width: 359px;
 }
 
@@ -27,7 +26,6 @@ input {
    align-items: center;
    gap: 10px;
 }
-
 
 /* posicionamiento del icono */
 

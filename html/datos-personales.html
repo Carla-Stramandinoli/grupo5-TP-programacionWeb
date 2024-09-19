@@ -3,9 +3,86 @@
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title></title>
+   <link rel="stylesheet" href="../css/estilos-datos-personales.css">
+   <title>Datos personales</title>
 </head>
 <body>
    
+   <div class="contenedor-de-primer-linea">
+      <h5>Mi cuenta</h5>
+      <h5>.</h5>
+      <h5>Mi usuario</h5>
+   </div>
+   <h1>Mi usuario</h1>
+   <hr>
+   <form action="../index.html">
+      <div class="contenedor-de-email">
+         <label>Email principal</label>
+         <input class="input-email" type="email" placeholder="Email" required>
+      </div>
+      <input class="boton-usuario" type="submit" value="GUARDAR CAMBIOS">
+   </form>
+   <hr>
+   <form action="../index.html"></form>
+      <div class="contenedor-de-contrasenia">
+         <label>Contraseña</label>
+         <div class="contenedor-de-boton-contrasenia">
+            <input class="input-contrasenia" type="password" placeholder="Contraseña" required>
+            <input id="boton-cambiar" type="submit" value="CAMBIAR">
+         </div>
+      </div>
+   </form>
+   
+   <hr class="separacion-principal">
+
+   <div class="contenedor-de-primer-linea">
+      <h5>Mi cuenta</h5>
+      <h5>.</h5>
+      <h5>Datos Personales</h5>
+   </div>
+   <h1>Datos personales</h1>
+   <hr>
+   <form class="segundo-formulario" action="../index.html">
+      <div class="contenedor-de-primeros-datos">
+         <div class="input-contenido">
+            <label>Nombre</label>
+            <input class="input-nombre-apellido" type="text" required>
+         </div>
+         <div class="input-contenido">
+            <label>Apellido</label>
+            <input class="input-nombre-apellido" type="text" required>
+         </div>
+      </div>
+      <div class="contenedor-de-segundos-datos">
+         <div class="prueba">
+            <label>Tipo</label>
+            <select name="tipo-dni" required>
+               <option value="DNI">DNI</option>
+               <option value="Pasaporte">Pasaporte</option>
+               <option value="CUIT">CUIT</option>
+            </select>
+         </div>
+         <div class="prueba">
+            <label>Número de documento</label>
+            <input class="input-prueba" type="number" required>
+         </div>
+         <div class="prueba">
+            <label>Fecha de nacimiento</label>
+            <input class="input-date" type="date" required>
+         </div>
+      </div>
+      <div class="contenedor-de-terceros-datos">
+         <div class="input-contenido">
+            <label>Teléfono celular</label>
+            <input class="input-nombre-apellido" type="number" required>
+         </div>
+         <div class="input-contenido">
+            <label>Email secundario</label>
+            <input class="input-nombre-apellido" type="email" required>
+         </div>
+      </div>
+      <input class="boton-datos-personales" type="submit" value="GUARDAR CAMBIOS">
+   </form>
+
 </body>
 </html>
