@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <link rel="stylesheet" href="../css/estilos-datos-personales.css">
    <title>Datos personales</title>
 </head>
+
 <body>
-   
+
    <div class="contenedor-de-primer-linea">
       <h5>Mi cuenta</h5>
       <h5>.</h5>
@@ -15,24 +17,30 @@
    </div>
    <h1>Mi usuario</h1>
    <hr>
-   <form action="../index.html">
+   <form action="../index.html" id="form-email-ppal">
       <div class="contenedor-de-email">
          <label>Email principal</label>
-         <input class="input-email" type="email" placeholder="Email" required>
+         <input id="input-email-ppal" class="input-email" type="text" placeholder="Email">
       </div>
+      <div id="mensajeErrorEmailPpal" class="error"></div>
       <input class="boton-usuario" type="submit" value="GUARDAR CAMBIOS">
    </form>
    <hr>
-   <form action="../index.html"></form>
+   <form id="form-pass">
       <div class="contenedor-de-contrasenia">
-         <label>Contraseña</label>
+         <div>
+            <label>Contraseña</label>
+            <p class="msj-req-pass">La contraseña debe contener entre 8 y 12 caracteres, incluyendo mayusculas, minusculas, numeros y al menos un caracter especial(#?!%$)</p>
+         </div>
+         
          <div class="contenedor-de-boton-contrasenia">
-            <input class="input-contrasenia" type="password" placeholder="Contraseña" required>
+            <input id="input-pass" class="input-contrasenia" type="password" placeholder="Contraseña">
+            <div id="mensajeErrorPass" class="error"></div>
             <input id="boton-cambiar" type="submit" value="CAMBIAR">
          </div>
       </div>
    </form>
-   
+
    <hr class="separacion-principal">
 
    <div class="contenedor-de-primer-linea">
@@ -42,47 +50,49 @@
    </div>
    <h1>Datos personales</h1>
    <hr>
-   <form class="segundo-formulario" action="../index.html">
+   <form class="segundo-formulario" action="../index.html" id="form-datos-personales">
       <div class="contenedor-de-primeros-datos">
          <div class="input-contenido">
             <label>Nombre</label>
-            <input class="input-nombre-apellido" type="text" required>
+            <input id="input-nombre" class="input-nombre-apellido" type="text">
          </div>
          <div class="input-contenido">
             <label>Apellido</label>
-            <input class="input-nombre-apellido" type="text" required>
+            <input id="input-apellido" class="input-nombre-apellido" type="text">
          </div>
       </div>
       <div class="contenedor-de-segundos-datos">
-         <div class="prueba">
+         <div class="div-tipoDoc">
             <label>Tipo</label>
-            <select name="tipo-dni" required>
+            <select name="tipo-dni">
                <option value="DNI">DNI</option>
                <option value="Pasaporte">Pasaporte</option>
                <option value="CUIT">CUIT</option>
             </select>
          </div>
-         <div class="prueba">
+         <div class="div-numDoc">
             <label>Número de documento</label>
-            <input class="input-prueba" type="number" required>
+            <input class="input-numDoc" type="number">
          </div>
-         <div class="prueba">
+         <div class="div-numDoc">
             <label>Fecha de nacimiento</label>
-            <input class="input-date" type="date" required>
+            <input class="input-date" type="date">
          </div>
       </div>
       <div class="contenedor-de-terceros-datos">
          <div class="input-contenido">
             <label>Teléfono celular</label>
-            <input class="input-nombre-apellido" type="number" required>
+            <input id="numCelular" class="input-nombre-apellido" type="number" placeholder="54 9 11 xxxxxxxx">
          </div>
          <div class="input-contenido">
             <label>Email secundario</label>
-            <input class="input-nombre-apellido" type="email" required>
+            <input id="emailSecundario" class="input-nombre-apellido" type="email">
          </div>
       </div>
+      <div id="mensajeErrorDatosPersonales" class="error"></div>
       <input class="boton-datos-personales" type="submit" value="GUARDAR CAMBIOS">
    </form>
-
+   <script src="../js/datosPersonales.js"></script>
 </body>
+
 </html>

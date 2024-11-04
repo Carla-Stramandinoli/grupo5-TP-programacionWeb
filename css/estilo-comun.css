@@ -42,7 +42,7 @@
 }
 
 .buscador:focus {
-    outline: none; 
+    outline: none;
 }
 
 .iconos-header {
@@ -53,11 +53,32 @@
     gap: 5px;
 }
 
-.carrusel {
+.imgCarrusel {
+    width: 26%;
+    height: auto;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 300px;
+}
+
+.carousel-inner {
+    position: relative;
+    width: 100%;
+    overflow: hidden; /* Evita el desbordamiento */
+}
+
+.carousel-item {
+    display: none; /* Oculta todas las imágenes */
+    width: 100%; /* Ocupa el 100% del contenedor */
+    height: 600px; /* Ajusta la altura según sea necesario */
+    object-fit: cover; /* Mantiene la proporción de la imagen */
+}
+
+.carousel-item.active {
+    display: block; /* Muestra solo la imagen activa */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #barra-navegacion {
@@ -106,7 +127,7 @@
     /*color: var(--dark-color-texto);*/
     font-family: 'catamaran';
     display: flex;
-    justify-content:space-around;
+    justify-content: space-around;
     height: 150px;
     gap: 5px;
 }

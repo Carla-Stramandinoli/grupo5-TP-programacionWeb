@@ -29,7 +29,7 @@ input {
 }
 
 .olvido-pass {
-   position: absolute;
+   /* position: absolute; */
    text-align: start;
    left: 14%;
    bottom: 45%;

@@ -13,10 +13,13 @@
       <form action="login.html">
          <h2>Registrarse</h2>
          <div class="inputs-form">
-            <input type="email" placeholder="Email" required>
+            <input id="input-email" type="email" placeholder="Email">
             <div class="input-pass">
-               <input type="password" placeholder="Contraseña" required>
+               <input id="input-pass" type="password" placeholder="Contraseña">
                <img src="../assets/img/passicon.svg" alt="" class="img-pass">
+            </div>
+            <div id="mensajeError" class="error">
+
             </div>
             <input class="boton-registrarse" type="submit" value="REGISTRATE">
          </div>
@@ -25,6 +28,7 @@
             href="">Politicas de Privacidad</a> de Bibioteca Alejandria</p>
       </form>
    </div>
+   <script src="../js/formularios.js"></script>
 </body>
 
 </html>
