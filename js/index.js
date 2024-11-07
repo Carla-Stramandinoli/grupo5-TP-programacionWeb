@@ -25,19 +25,18 @@ function obtenerImagenesAleatorias(array, cantidad) {
     return imagenesAleatorias;
 }
 
-let cincoPortadas = obtenerImagenesAleatorias(portadas ,5);
-
+let cincoPortadas = obtenerImagenesAleatorias(portadas, 5);
 carouselInner.innerHTML = "";
 
 cincoPortadas.forEach((src, index) => {
-    
+
     // Create a new div for each carousel item
     const carouselItem = document.createElement("div");
     carouselItem.classList.add("carousel-item");
 
     // Set the first item as active
     if (index === 0) {
-      carouselItem.classList.add("active");
+        carouselItem.classList.add("active");
     }
 
     // Create the image element
@@ -51,4 +50,13 @@ cincoPortadas.forEach((src, index) => {
 
     // Append the carousel item to the carousel inner container
     carouselInner.appendChild(carouselItem);
-  });
+});
+
+
+// let headerArticulo = document.querySelectorAll(".header-articulo");
+// let boton = document.createElement("button");
+// boton.value = "Ver mas";
+// headerArticulo.addEventListener("click", ()=> {
+//     articulos.classList.tog
+// })
+
