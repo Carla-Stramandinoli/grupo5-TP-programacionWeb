@@ -7,16 +7,16 @@ let portadas = [];
 libros.forEach(item => {
    ratings.push(item.Rating);
    portadas.push(item.Portada);
-
 });
 
+//obtener el carrusel
 const carouselInner = document.getElementById("carouselInner");
 document.querySelector('#carouselExampleIndicators').setAttribute('data-bs-interval', '2000');
 
 
 function obtenerImagenesAleatorias(array, cantidad) {
     let imagenesAleatorias = [];
-    let indicesUsados = new Set(); // Usamos un Set para evitar índices duplicados
+    let indicesUsados = new Set(); // Set para evitar índices duplicados
 
     while (imagenesAleatorias.length < cantidad) {
         let indiceAleatorio = Math.floor(Math.random() * array.length);
@@ -32,6 +32,7 @@ function obtenerImagenesAleatorias(array, cantidad) {
 let cincoPortadas = obtenerImagenesAleatorias(portadas, 5);
 carouselInner.innerHTML = "";
 
+//recorre el array con las portadas y agrega cinco aleatorias al carrusel
 cincoPortadas.forEach((src, index) => {
 
     // crear un nuevo div para el carrusel
@@ -56,6 +57,8 @@ cincoPortadas.forEach((src, index) => {
     carouselInner.appendChild(carouselItem);
 });
 
+
+//obtener todos los campos con nombres de los libros para hacer la lupita
 let nombresDeLibros = document.querySelectorAll(".item-valor-nombre");
 let inputBuscador = document.querySelector(".buscador");
 
@@ -88,7 +91,7 @@ inputBuscador.addEventListener("keyup", () => {
    }
 })
 
-
+//genera estrellas en base a al numero que esta guardado en el archivo json
 function generateStars(ratings) {
    let stars = '';
    for (let i = 0; i < 5; i++) {
@@ -100,7 +103,6 @@ function generateStars(ratings) {
    }
    return stars;
 }
-
 
 function cargarEstrellas() {
    document.querySelectorAll(".articulo-categoria").forEach((article, index) => {
@@ -116,11 +118,11 @@ function cargarEstrellas() {
 
 
 const tabCategoria1 = document.querySelector("#tab-categoria-0");
-
+//obtiene todos los <a> con la clase tab-categoria
 var linksCategorias = document.querySelectorAll("a.tab-categoria");
 var articulos;
 
-
+//creacion del nodo article para las tarjetas extra de la seccion todas
 function createArticleNode(id) {
    const article = document.createElement('article');
    article.id = id;
@@ -197,7 +199,7 @@ function cargarCategorias() {
 
 
             if (linkCategoria.innerText === "Todas") {
-               if (key > 9) {
+               if (key > 10) {
                   id = `item${key}`;
                   const articuloNode = createArticleNode(`categoria00-${id}`);
                   document.querySelector("#seccion-categoria").appendChild(articuloNode);
@@ -213,9 +215,6 @@ function cargarCategorias() {
                elements.forEach(element => {
                   element.remove();
                });
-
-               if (key > 9) {
-               }
 
                articleSelector = llenarCampos(id, value);
                document.querySelector(articleSelector).id = value["Id"];
@@ -267,4 +266,3 @@ function llenarCampos(idRecibido, value) {
 if (configuracion["modo-test-prod"] === "prod") {
    tabCategoria1.click();
 };
-

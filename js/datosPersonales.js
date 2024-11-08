@@ -15,6 +15,7 @@ function lanzarEvento(formulario, funcionValidacion) {
     })
 }
 
+
 // lanzarEvento(formEmailPpal, validarFormulario);
 // lanzarEvento(formPass, validarFormulario);
 
@@ -36,14 +37,6 @@ lanzarEvento(formPass, () => {
     )
 })
 
-lanzarEvento(formPass, () => {
-    validarFormulario(
-        "input-pass",
-        "mensajeErrorPass",
-        expContrasenia,
-        "La contraseña ingresada no es valida.",
-    )
-})
 
 lanzarEvento(formDatosPersonales, validarFormularioDatosPersonales);
 
@@ -126,4 +119,53 @@ function validarFormularioDatosPersonales() {
         formDatosPersonales.submit();
     }
     console.log(esMayorDe16());
+
 }
+
+
+
+// function validarFormPpal() {
+//     let email = document.getElementById("input-email-ppal");
+//     let mensaje = document.getElementById("mensajeErrorEmailPpal");
+
+//     let error = false;
+//     let mensajeDelError = "";
+
+//     if (!expEmail.test(email.value)) {
+//         error = true;
+//         mensajeDelError += "<p>El email ingresado no es valido.</p>";
+//     }
+
+//     if (error) {
+//         mensaje.innerHTML = mensajeDelError;
+//         mensaje.style.color = "red";
+//     } else {
+//         formEmailPpal.submit();
+//     }
+// }
+
+
+
+// function validarFormPass() {
+//     let contrasenia = document.getElementById("input-pass");
+//     let mensaje = document.getElementById("mensajeErrorPass");
+
+//     let error = false;
+//     let mensajeDelError = "";
+
+//     if (!expContrasenia.test(contrasenia.value)) {
+//         error = true;
+//         mensajeDelError += "<p>La contraseña debe contener entre 8 y 12 caracteres, incluyendo mayusculas, minusculas, numeros y al menos un caracter especial(#?!%$)</p>";
+//     }
+//     if (error) {
+//         mensaje.innerHTML = mensajeDelError;
+//         mensaje.style.color = "red";
+//         mensaje.style.margin = "2px";
+//     } else {
+//         formEmailPpal.submit();
+//     }
+// }
+
+
+//separar cada mensaje por las dif acciones de cada form
+//es decir tres eventos diferentes, porq son tres forms diferentes.
