@@ -1,35 +1,68 @@
-import libros from "../../data/libros.json" with { type: 'json' };
+﻿import libros from "../../data/libros.json" with { type: 'json' };
 import configuracion from "../../config/configuracion.json" with { type: 'json' };
 
 let ratings = [];
 
 libros.forEach(item => {
-    ratings.push(item.Rating);
+   ratings.push(item.Rating);
 });
+
+
+let nombresDeLibros = document.querySelectorAll(".item-valor-nombre");
+let inputBuscador = document.querySelector(".buscador");
+
+inputBuscador.addEventListener("keyup", () => {
+   let valor = inputBuscador.value;
+   if (valor === "") {
+      // Si el buscador está vacío, cargamos todos los libros en la categoría "Todas"
+      tabCategoria1.click();
+      location.reload()
+   } else {
+
+      let arrayDeLibrosQueCumplen = [];
+
+      nombresDeLibros.forEach((item) => {
+         if (item.innerHTML.includes(inputBuscador.value)) {
+            arrayDeLibrosQueCumplen.push(item.parentNode.parentNode);
+         }
+
+         const elements = document.querySelectorAll(".extra");
+         elements.forEach(element => {
+            element.remove();
+         });
+         let seccionCategoria = document.querySelector("#seccion-categoria");
+         seccionCategoria.innerHTML = "";
+
+         arrayDeLibrosQueCumplen.forEach((item) => {
+            seccionCategoria.appendChild(item);
+         })
+      });
+   }
+})
 
 
 function generateStars(ratings) {
    let stars = '';
    for (let i = 0; i < 5; i++) {
-       if(i < ratings){
-           stars += "\u2605";
-       } else {
-           stars += "\u2606";
-       }
+      if (i < ratings) {
+         stars += "\u2605";
+      } else {
+         stars += "\u2606";
+      }
    }
    return stars;
 }
 
 
-function cargarEstrellas(){
+function cargarEstrellas() {
    document.querySelectorAll(".articulo-categoria").forEach((article, index) => {
-       // Busca el elemento donde colocarás las estrellas
-       const ratingElement = article.querySelector(".item-valor-rating");
-       // Crea y agrega el elemento de estrellas
-       if (ratingElement) {
-           ratingElement.innerHTML = generateStars(ratings[index]);
-           ratingElement.classList.add("estrellasIcono");
-       }
+      // Busca el elemento donde colocarás las estrellas
+      const ratingElement = article.querySelector(".item-valor-rating");
+      // Crea y agrega el elemento de estrellas
+      if (ratingElement) {
+         ratingElement.innerHTML = generateStars(ratings[index]);
+         ratingElement.classList.add("estrellasIcono");
+      }
    });
 }
 
@@ -41,112 +74,113 @@ var articulos;
 
 
 function createArticleNode(id) {
-   // Create the main article element
    const article = document.createElement('article');
    article.id = id;
-   article.className = `articulo-categoria ${id.split('-')[1]} extra`; // Extract class from the id
+   article.className = `articulo-categoria ${id.split('-')[1]} extra`;
 
-   // Create the header element
    const header = document.createElement('header');
    header.className = 'header-articulo';
 
-   // Create and append child elements to the header
-   const nameParagraph = document.createElement('p');
-   nameParagraph.className = 'item-valor-nombre';
-   nameParagraph.textContent = 'Valor del Nombre ITEM 9';
-   
-   const authorParagraph = document.createElement('p');
-   authorParagraph.className = 'item-valor-autor';
-   authorParagraph.textContent = 'Valor del Autor';
-   
+   // crear y agregar elementos al header
+   const nombreParrafo = document.createElement('p');
+   nombreParrafo.className = 'item-valor-nombre';
+   nombreParrafo.textContent = 'Valor del Nombre ITEM 9';
+
+   const autorParrafo = document.createElement('p');
+   autorParrafo.className = 'item-valor-autor';
+   autorParrafo.textContent = 'Valor del Autor';
+
    const img = document.createElement('img');
    img.className = 'item-valor-portada';
-   img.src = 'assets/img/' + id + '.png'; // Using the id for the image source
+   img.src = 'assets/img/' + id + '.png';
    img.alt = 'Imagen de Portada';
-   
-   const descriptionParagraph = document.createElement('p');
-   descriptionParagraph.className = 'item-valor-descripcion';
-   descriptionParagraph.textContent = 'Valor de la Descripcion';
-   
-   const ratingParagraph = document.createElement('p');
-   ratingParagraph.className = 'item-valor-rating';
-   ratingParagraph.textContent = 'Valor de Rating';
 
-   // Append all header elements to the header
-   header.appendChild(nameParagraph);
-   header.appendChild(authorParagraph);
+   const descripcionParrafo = document.createElement('p');
+   descripcionParrafo.className = 'item-valor-descripcion';
+   descripcionParrafo.textContent = 'Valor de la Descripcion';
+
+   const ratingParrafo = document.createElement('p');
+   ratingParrafo.className = 'item-valor-rating';
+   ratingParrafo.textContent = 'Valor de Rating';
+
+   // agregar todos los elementos al header
+   header.appendChild(nombreParrafo);
+   header.appendChild(autorParrafo);
    header.appendChild(img);
-   header.appendChild(descriptionParagraph);
-   header.appendChild(ratingParagraph);
+   header.appendChild(descripcionParrafo);
+   header.appendChild(ratingParrafo);
 
-   // Create the detail element
-   const detailDiv = document.createElement('div');
-   detailDiv.className = 'detalle-articulo';
+   // crear el elemento de detalle articulo
+   const detalleArticuloDiv = document.createElement('div');
+   detalleArticuloDiv.className = 'detalle-articulo';
 
-   // Create and append custom fields
+   // crear y agregar campos customizados
    for (let i = 1; i <= 5; i++) {
-       const customTitle = document.createElement('h4');
-       customTitle.className = `item-campo-personalizado_${i}`;
-       customTitle.textContent = `NOMBRE de Campo Personalizado ${i}`;
-       
-       const customValue = document.createElement('p');
-       customValue.className = `item-valor-personalizado_${i}`;
-       customValue.textContent = `VALOR de Campo Personalizado ${i}`;
+      const customTitle = document.createElement('h4');
+      customTitle.className = `item-campo-personalizado_${i}`;
+      customTitle.textContent = `NOMBRE de Campo Personalizado ${i}`;
 
-       detailDiv.appendChild(customTitle);
-       detailDiv.appendChild(customValue);
+      const customValue = document.createElement('p');
+      customValue.className = `item-valor-personalizado_${i}`;
+      customValue.textContent = `VALOR de Campo Personalizado ${i}`;
+
+      detalleArticuloDiv.appendChild(customTitle);
+      detalleArticuloDiv.appendChild(customValue);
    }
 
-   // Append header and detail elements to the article
+   // agregar los elementos header y detalle a todo el articulo que contiene los libros
    article.appendChild(header);
-   article.appendChild(detailDiv);
+   article.appendChild(detalleArticuloDiv);
 
-   return article; // Return the constructed article node
+   return article; // devuelve la tarjeta construida
 }
 
-linksCategorias.forEach(function(linkCategoria) {
-   linkCategoria.addEventListener("click", function() {
-      articulos = "";
-      Object.entries(libros).forEach((entry) => {
-         const [key, value] = entry;
-         let id = value.Id.split("-")[1];
-         let articleSelector;
+cargarCategorias();
 
 
-         // Check if the category is "ALL" or matches the current linkCategoria
-         if (linkCategoria.innerText === "Todas" ) {
-               // Example usage
-               if(key > 9 ){
-                  id =`item${key}`;
-                  const articleNode = createArticleNode(`categoria00-${id}`);
-                  document.querySelector("#seccion-categoria").appendChild(articleNode); 
-               }    
-               articleSelector = llenarCampos(id,value);
+function cargarCategorias() {
+   linksCategorias.forEach(function (linkCategoria) {
+      linkCategoria.addEventListener("click", function () {
+         articulos = "";
+         Object.entries(libros).forEach((entry) => {
+            const [key, value] = entry;
+            let id = value.Id.split("-")[1];
+            let articleSelector;
+
+
+            if (linkCategoria.innerText === "Todas") {
+               if (key > 9) {
+                  id = `item${key}`;
+                  const articuloNode = createArticleNode(`categoria00-${id}`);
+                  document.querySelector("#seccion-categoria").appendChild(articuloNode);
+               }
+               articleSelector = llenarCampos(id, value);
                document.querySelector(articleSelector).id = value["Id"];
-         }
-         
-         if (linkCategoria.innerText === value.Categoria) {
-            if(key > 9){
-               const elements = document.querySelectorAll(".extra");
-
-               // Iterate through the NodeList and remove each element from the DOM
-               elements.forEach(element => {
-                   element.remove();
-               });
             }
-            
-            articleSelector = llenarCampos(id,value);
-            document.querySelector(articleSelector).id = value["Id"];
-         };
-         cargarEstrellas();
+
+            if (linkCategoria.innerText === value.Categoria) {
+               
+               const elements = document.querySelectorAll(".extra");
+               // recorre los elementos agregados dinamicamente y los elimina para solo mostrar los de la categoria especifica
+               elements.forEach(element => {
+                  element.remove();
+               });
+
+               if (key > 9) {
+               }
+
+               articleSelector = llenarCampos(id, value);
+               document.querySelector(articleSelector).id = value["Id"];
+            };
+            cargarEstrellas();
+         });
       });
    });
-});
+}
 
-
-function llenarCampos(idRecibido ,value) {
+function llenarCampos(idRecibido, value) {
    const articleSelector = "article." + idRecibido;
-   // Update the article with book details
+   // actualiza los articulos con los datos de los libros
    document.querySelector(articleSelector + " > header.header-articulo > p.item-valor-nombre").innerText = value["Nombre"];
    document.querySelector(articleSelector + " > header.header-articulo > p.item-valor-autor").innerText = value["Autor"];
    document.querySelector(articleSelector + " > header.header-articulo > img.item-valor-portada").src = value["Portada"];
@@ -182,7 +216,7 @@ function llenarCampos(idRecibido ,value) {
 }
 
 
-if(configuracion["modo-test-prod"] === "prod") {
-   tabCategoria1.click();  
+if (configuracion["modo-test-prod"] === "prod") {
+   tabCategoria1.click();
 };
 
