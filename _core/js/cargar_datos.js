@@ -2,11 +2,59 @@
 import configuracion from "../../config/configuracion.json" with { type: 'json' };
 
 let ratings = [];
+let portadas = [];
 
 libros.forEach(item => {
    ratings.push(item.Rating);
+   portadas.push(item.Portada);
+
 });
 
+const carouselInner = document.getElementById("carouselInner");
+document.querySelector('#carouselExampleIndicators').setAttribute('data-bs-interval', '2000');
+
+
+function obtenerImagenesAleatorias(array, cantidad) {
+    let imagenesAleatorias = [];
+    let indicesUsados = new Set(); // Usamos un Set para evitar índices duplicados
+
+    while (imagenesAleatorias.length < cantidad) {
+        let indiceAleatorio = Math.floor(Math.random() * array.length);
+
+        if (!indicesUsados.has(indiceAleatorio)) { // Verifica que el índice no esté repetido
+            imagenesAleatorias.push(array[indiceAleatorio]);
+            indicesUsados.add(indiceAleatorio); // Marca el índice como usado
+        }
+    }
+    return imagenesAleatorias;
+}
+
+let cincoPortadas = obtenerImagenesAleatorias(portadas, 5);
+carouselInner.innerHTML = "";
+
+cincoPortadas.forEach((src, index) => {
+
+    // crear un nuevo div para el carrusel
+    const carouselItem = document.createElement("div");
+    carouselItem.classList.add("carousel-item");
+
+    // setea el primer item como activo (el que se esta viendo)
+    if (index === 0) {
+        carouselItem.classList.add("active");
+    }
+
+    // creas el elemento imagen
+    const img = document.createElement("img");
+    img.src = src;
+    img.classList.add("d-block", "imgCarrusel");
+    img.alt = `Image ${index + 1}`;
+
+    // agregar la imagen al item del carrusel
+    carouselItem.appendChild(img);
+
+    // agregar el item del carrusel al contenedor del carrusel
+    carouselInner.appendChild(carouselItem);
+});
 
 let nombresDeLibros = document.querySelectorAll(".item-valor-nombre");
 let inputBuscador = document.querySelector(".buscador");
