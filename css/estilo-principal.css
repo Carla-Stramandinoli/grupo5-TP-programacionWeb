@@ -1,4 +1,4 @@
-﻿@import url("_core/css/temas_colores_fuentes.css");
+﻿
 
 @font-face {
    /* Fuente para titulos y contenido de importancia dentro de la web */
@@ -43,6 +43,15 @@ body {
    border: solid 1px black;
    margin-top: 5px;
    margin-bottom: 5px;
+   height: auto;
+   max-height: 550px; 
+   overflow: hidden;
+   transition: max-height 0.5s ease;
+   position: relative;
+}
+
+.articulo-categoria:hover {
+   max-height: 1500px;
 }
 
 .header-articulo {
@@ -52,11 +61,36 @@ body {
    text-align: center;
 }
 
+.item-valor-descripcion {
+   opacity: 0;
+   transition: opacity 0.5s ease;
+}
+
+.item-valor-rating {
+   opacity: 0;
+   transition: opacity 0.5s ease;
+}
+
 .detalle-articulo {
    display: flex;
    flex-direction: column;
    align-items: center;
    text-align: center;
+   opacity: 0;
+   transition: opacity 0.5s ease;
+}
+
+/* Mostrar los detalles al hacer hover */
+.articulo-categoria:hover .detalle-articulo {
+   opacity: 1;
+}
+
+.articulo-categoria:hover .item-valor-descripcion {
+   opacity: 1;
+}
+
+.articulo-categoria:hover .item-valor-rating {
+   opacity: 1;
 }
 
 .item-valor-nombre {
@@ -69,6 +103,8 @@ body {
 
 .item-valor-descripcion {
    font-family: 'cormorantInfant';
+   margin: 10px;
+
 }
 
 .item-valor-rating {

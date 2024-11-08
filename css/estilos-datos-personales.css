@@ -54,6 +54,12 @@ h5 {
    height: 20px;
 }
 
+.msj-req-pass{
+   font-size: 13px;
+   color: #6a8a86;
+   margin: 0px;
+}
+
 #boton-cambiar {
    width: 20%;
    height: 30px;
@@ -101,12 +107,12 @@ select {
    height: 22px;
 }
 
-.input-prueba {
+.input-numDoc {
    width: 100%;
    height: 20px;
 }
 
-.prueba {
+.div-numDoc, .div-fNac, .div-tipoDoc{
    flex-basis: calc(33% - 6px);
 }
 
